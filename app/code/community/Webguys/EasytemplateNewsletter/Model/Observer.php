@@ -93,15 +93,12 @@ class Webguys_EasytemplateNewsletter_Model_Observer extends Mage_Core_Model_Abst
                     // Replace original category content
                     /** @var $renderer Webguys_Easytemplate_Block_Renderer */
                     $renderer = Mage::app()->getLayout()->createBlock('easytemplate/renderer', 'easytemplate_newsletter');
-                    $renderer->setGroup( $group );
+                    $renderer->setGroup($group);
 
                     $storeId = (int)Mage::app()->getRequest()->getParam('store_id');
                     if(!$storeId) {
                         $storeId = Mage::app()->getAnyStoreView()->getId();
                     }
-
-                    $vars = array();
-                    $vars['subscriber'] = Mage::getModel('newsletter/subscriber');
 
                     $template->emulateDesign($storeId);
 
