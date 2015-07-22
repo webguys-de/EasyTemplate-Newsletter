@@ -7,7 +7,7 @@ class Webguys_EasytemplateNewsletter_Helper_Newsletter extends Mage_Core_Helper_
     public function isEasyTemplateNewsletter($templateId)
     {
         $template = Mage::getModel('newsletter/template')->load($templateId);
-        return ($template->getId() && $template->getViewMode() == Webguys_Easytemplate_Model_Config_Source_Cms_Page_Viewmode::VIEWMODE_EASYTPL);
+        return ($template->getId() && $template->isEasyTemplate());
     }
 
     /**

@@ -46,6 +46,24 @@
             </core_block_abstract_to_html_after>
         </events>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <webguys_easytemplatenewsletter>
+                    <file>webguys/easytemplate_newsletter.xml</file>
+                </webguys_easytemplatenewsletter>
+            </updates>
+        </layout>
+        <routers>
+            <newsletter>
+                <args>
+                    <modules>
+                        <webguys_easytemplatenewsletter before="Mage_Newsletter">Webguys_EasytemplateNewsletter_Newsletter</webguys_easytemplatenewsletter>
+                    </modules>
+                </args>
+            </newsletter>
+        </routers>
+    </frontend>
     <adminhtml>
         <layout>
             <updates>

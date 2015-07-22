@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <newsletter_preview_show>
+        <block type="easytemplate_newsletter/preview" name="root" output="toHtml" />
+    </newsletter_preview_show>
+
+</layout>

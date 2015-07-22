@@ -52,7 +52,7 @@ class Webguys_EasytemplateNewsletter_Model_Observer extends Mage_Core_Model_Abst
             /* @var $queue Mage_Newsletter_Model_Queue */
             $queue = Mage::getSingleton('newsletter/queue');
 
-            if ($queue->getTemplate()->getViewMode() == Webguys_Easytemplate_Model_Config_Source_Cms_Page_Viewmode::VIEWMODE_EASYTPL) {
+            if ($queue->getTemplate()->isEasyTemplate()) {
                 $block->unsetChild('preview_button');
             }
         }
@@ -61,7 +61,7 @@ class Webguys_EasytemplateNewsletter_Model_Observer extends Mage_Core_Model_Abst
             /* @var $queue Mage_Newsletter_Model_Queue */
             $queue = Mage::getSingleton('newsletter/queue');
 
-            if ($queue->getTemplate()->getViewMode() == Webguys_Easytemplate_Model_Config_Source_Cms_Page_Viewmode::VIEWMODE_EASYTPL) {
+            if ($queue->getTemplate()->isEasyTemplate()) {
                 $form = $block->getForm();
                 $fieldset = $form->getElement('base_fieldset');
                 $fieldset->removeField('text');
@@ -85,28 +85,11 @@ class Webguys_EasytemplateNewsletter_Model_Observer extends Mage_Core_Model_Abst
                 $queue = Mage::getModel('newsletter/queue');
                 $queue->load($id);
 
-                if ($queue->getTemplate()->getViewMode() == Webguys_Easytemplate_Model_Config_Source_Cms_Page_Viewmode::VIEWMODE_EASYTPL) {
+                $storeId = (int)Mage::app()->getRequest()->getParam('store_id', false);
 
-                    /** @var $helper Webguys_EasytemplateNewsletter_Helper_Newsletter */
-                    $helper = Mage::helper('easytemplate_newsletter/newsletter');
-                    $group = $helper->getGroupByNewsletterId($queue->getTemplate()->getId());
-
-                    // Replace original category content
-                    /** @var $renderer Webguys_Easytemplate_Block_Renderer */
-                    $renderer = Mage::app()->getLayout()->createBlock('easytemplate/renderer', 'easytemplate_newsletter');
-                    $renderer->setGroup($group);
-
-                    $storeId = (int)Mage::app()->getRequest()->getParam('store_id');
-                    if(!$storeId) {
-                        $storeId = Mage::app()->getAnyStoreView()->getId();
-                    }
-
-                    $template->emulateDesign($storeId);
-
+                if ($html = $queue->getTemplate()->renderTemplate($storeId)) {
                     $transport = $observer->getTransport();
-                    $transport->setHtml($renderer->toHtml());
-
-                    $template->revertDesign();
+                    $transport->setHtml($html);
                 }
             }
 

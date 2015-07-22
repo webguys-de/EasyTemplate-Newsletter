@@ -5,10 +5,10 @@
             <enabled>1</enabled>
             <label>Simple Templates</label>
             <templates>
-                <head template="easytemplate_newsletter/template/head.phtml" type="easytemplate/template" translate="label,comment">
+                <head template="easytemplate_newsletter/template/head.phtml" type="easytemplate_newsletter/template" translate="label,comment">
                     <enabled>1</enabled>
                     <label>Head</label>
-                    <image>images/easytemplate/headline_text.png</image>
+                    <image>images/easytemplate_newsletter/head.png</image>
                     <comment>Headline, subheadline and some additional text</comment>
                     <sort_order>10</sort_order>
                     <fields>
@@ -24,8 +24,24 @@
                     </fields>
                 </head>
 
-
-
+                <footer template="easytemplate_newsletter/template/footer.phtml" type="easytemplate_newsletter/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Footer</label>
+                    <image>images/easytemplate_newsletter/footer.png</image>
+                    <comment>Headline, subheadline and some additional text</comment>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <title translate="label,comment">
+                            <label>Title</label>
+                            <comment>Newsletter Title</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>10</sort_order>
+                            <default_value>1</default_value>
+                            <required>1</required>
+                        </title>
+                    </fields>
+                </footer>
             </templates>
         </newsletter>
     </easytemplate>

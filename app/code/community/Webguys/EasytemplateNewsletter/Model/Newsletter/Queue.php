@@ -4,26 +4,12 @@ class Webguys_EasytemplateNewsletter_Model_Newsletter_Queue extends Mage_Newslet
 {
     protected function isEasyTemplate()
     {
-        return ($this->getTemplate()->getViewMode() == Webguys_Easytemplate_Model_Config_Source_Cms_Page_Viewmode::VIEWMODE_EASYTPL);
+        return ($this->getTemplate()->isEasyTemplate());
     }
 
     public function getNewsletterTextByStore($storeId)
     {
-        if ($this->isEasyTemplate()) {
-
-            /** @var $helper Webguys_EasytemplateNewsletter_Helper_Newsletter */
-            $helper = Mage::helper('easytemplate_newsletter/newsletter');
-            $group = $helper->getGroupByNewsletterId($this->getTemplate()->getId());
-
-            // Replace original category content
-            /** @var $renderer Webguys_Easytemplate_Block_Renderer */
-            $renderer = Mage::app()->getLayout()->createBlock('easytemplate/renderer', 'easytemplate_newsletter');
-            $renderer->setGroup($group);
-
-            $this->getTemplate()->emulateDesign($storeId);
-            $newsletterText = $renderer->toHtml();
-            $this->getTemplate()->revertDesign();
-
+        if ($newsletterText = $this->getTemplate()->renderTemplate($storeId)) {
             return $newsletterText;
         }
         else {
