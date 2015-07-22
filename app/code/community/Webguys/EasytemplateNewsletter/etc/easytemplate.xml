@@ -9,8 +9,8 @@
                     <enabled>1</enabled>
                     <label>Head</label>
                     <image>images/easytemplate_newsletter/head.png</image>
-                    <comment>Headline, subheadline and some additional text</comment>
-                    <sort_order>10</sort_order>
+                    <comment>Title of the newsletter</comment>
+                    <sort_order>1</sort_order>
                     <fields>
                         <title translate="label,comment">
                             <label>Title</label>
@@ -24,12 +24,104 @@
                     </fields>
                 </head>
 
+                <header template="easytemplate_newsletter/template/header.phtml" type="easytemplate_newsletter/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Header bar</label>
+                    <image>images/easytemplate_newsletter/header.png</image>
+                    <comment>Header bar with logo and contents</comment>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <preview_text translate="label,comment">
+                            <label>Preview text</label>
+                            <comment>Hidden preheader text (just for preview in Mail clients)</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>10</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </preview_text>
+                        <welcome_line translate="label,comment">
+                            <label>Welcome line</label>
+                            <comment>First line for text in the upper right corner</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>20</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </welcome_line>
+                        <welcome_line_two translate="label,comment">
+                            <label>Welcome line (second)</label>
+                            <comment>Second line for text in the upper right corner</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>30</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </welcome_line_two>
+                    </fields>
+                </header>
+
+                <top_banner template="easytemplate_newsletter/template/top_banner.phtml" type="easytemplate_newsletter/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Top Banner</label>
+                    <image>images/easytemplate_newsletter/top_banner.png</image>
+                    <comment>Big banner with image, text and button</comment>
+                    <sort_order>20</sort_order>
+                    <fields>
+                        <banner_image translate="label,comment">
+                            <label>Header image</label>
+                            <comment>Please provice image with dimensions 500x300 px</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_image</input_renderer>
+                            <sort_order>10</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </banner_image>
+                        <banner_alt_text translate="label,comment">
+                            <label>Header image (alt)</label>
+                            <comment>Alt text of header image</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>20</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </banner_alt_text>
+                        <big_text translate="label,comment">
+                            <label>Big teaser text</label>
+                            <comment>Teaser text</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>30</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </big_text>
+                        <button_text translate="label,comment">
+                            <label>Button Text</label>
+                            <comment>Text on the button</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>40</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </button_text>
+                        <button_link translate="label,comment">
+                            <label>Button Link</label>
+                            <comment>Target for banner (same as Button link)</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_link</input_renderer>
+                            <sort_order>50</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </button_link>
+                    </fields>
+                </top_banner>
+
                 <footer template="easytemplate_newsletter/template/footer.phtml" type="easytemplate_newsletter/template" translate="label,comment">
                     <enabled>1</enabled>
                     <label>Footer</label>
                     <image>images/easytemplate_newsletter/footer.png</image>
-                    <comment>Headline, subheadline and some additional text</comment>
-                    <sort_order>10</sort_order>
+                    <comment>Footer with unsubscribe link and imprint data</comment>
+                    <sort_order>900</sort_order>
                     <fields>
                         <title translate="label,comment">
                             <label>Title</label>
