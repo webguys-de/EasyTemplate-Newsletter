@@ -22,7 +22,8 @@
             </easytemplate_newsletter>
             <newsletter>
                 <rewrite>
-                    <template>Webguys_EasytemplateNewsletter_Model_Newsletter</template>
+                    <template>Webguys_EasytemplateNewsletter_Model_Newsletter_Template</template>
+                    <queue>Webguys_EasytemplateNewsletter_Model_Newsletter_Queue</queue>
                 </rewrite>
             </newsletter>
         </models>
@@ -34,6 +35,16 @@
                 </setup>
             </easytemplate_newsletter_setup>
         </resources>
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <webguys_easytemplatenewsletter>
+                        <class>easytemplate_newsletter/observer</class>
+                        <method>coreBlockAbstractToHtmlAfter</method>
+                    </webguys_easytemplatenewsletter>
+                </observers>
+            </core_block_abstract_to_html_after>
+        </events>
     </global>
     <adminhtml>
         <layout>
@@ -44,22 +55,22 @@
             </updates>
         </layout>
         <events>
-            <model_save_before>
+            <newsletter_template_save_before>
                 <observers>
                     <webguys_easytemplatenewsletter>
                         <class>easytemplate_newsletter/observer</class>
-                        <method>modelSaveBefore</method>
+                        <method>newsletterTemplateSaveBefore</method>
                     </webguys_easytemplatenewsletter>
                 </observers>
-            </model_save_before>
-            <model_save_commit_after>
+            </newsletter_template_save_before>
+            <newsletter_template_save_commit_after>
                 <observers>
                     <webguys_easytemplatenewsletter>
                         <class>easytemplate_newsletter/observer</class>
-                        <method>modelSaveCommitAfter</method>
+                        <method>newsletterTemplateSaveCommitAfter</method>
                     </webguys_easytemplatenewsletter>
                 </observers>
-            </model_save_commit_after>
+            </newsletter_template_save_commit_after>
             <adminhtml_block_html_before>
                 <observers>
                     <webguys_easytemplatenewsletter>
