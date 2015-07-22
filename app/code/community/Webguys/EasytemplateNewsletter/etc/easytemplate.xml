@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <easytemplate>
+        <newsletter translate="label">
+            <enabled>1</enabled>
+            <label>Simple Templates</label>
+            <templates>
+                <head template="easytemplate_newsletter/template/head.phtml" type="easytemplate/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Head</label>
+                    <image>images/easytemplate/headline_text.png</image>
+                    <comment>Headline, subheadline and some additional text</comment>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <title translate="label,comment">
+                            <label>Title</label>
+                            <comment>Newsletter Title</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>10</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </title>
+                    </fields>
+                </head>
+
+
+
+            </templates>
+        </newsletter>
+    </easytemplate>
+</config>

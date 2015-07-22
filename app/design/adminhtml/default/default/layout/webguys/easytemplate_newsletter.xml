@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <adminhtml_newsletter_template_edit>
+        <remove name="template_edit"/>
+        <reference name="content">
+            <block type="easytemplate_newsletter/adminhtml_newsletter_template_edit" name="easytemplate_newsletter_template_edit" />
+        </reference>
+        <reference name="left">
+            <block type="easytemplate_newsletter/adminhtml_newsletter_template_edit_tabs" name="easytemplate_newsletter_template_edit_tabs">
+                <block type="easytemplate_newsletter/adminhtml_newsletter_template_edit_tab_main" name="easytemplate_newsletter_template_edit_tab_main" />
+                <block type="easytemplate_newsletter/adminhtml_newsletter_template_edit_tab_content" name="easytemplate_newsletter_template_edit_tab_content" />
+                <block type="easytemplate_newsletter/adminhtml_newsletter_template_edit_tab_templates" name="easytemplate_newsletter_template_edit_tab_templates">
+                    <block type="easytemplate/adminhtml_edit_selection" name="selection" as="selection" template="easytemplate/edit/selection.phtml" />
+                </block>
+                <action method="addTab"><name>main_section</name><block>easytemplate_newsletter_template_edit_tab_main</block></action>
+                <action method="addTab"><name>content_section</name><block>easytemplate_newsletter_template_edit_tab_content</block></action>
+                <action method="addTab"><name>easy_template</name><block>easytemplate_newsletter_template_edit_tab_templates</block></action>
+            </block>
+        </reference>
+    </adminhtml_newsletter_template_edit>
+
+</layout>
