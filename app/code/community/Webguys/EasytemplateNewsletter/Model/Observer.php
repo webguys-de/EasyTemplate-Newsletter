@@ -75,7 +75,8 @@ class Webguys_EasytemplateNewsletter_Model_Observer extends Mage_Core_Model_Abst
         /** @var $block Mage_Core_Block_Abstract */
         $block = $observer->getBlock();
 
-        if ($block instanceof Mage_Adminhtml_Block_Newsletter_Queue_Preview) {
+        if ($block instanceof Mage_Adminhtml_Block_Newsletter_Queue_Preview ||
+            $block instanceof Mage_Adminhtml_Block_Newsletter_Template_Preview) {
 
             /* @var $template Mage_Newsletter_Model_Template */
             $template = Mage::getModel('newsletter/template');

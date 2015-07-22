@@ -35,23 +35,6 @@ class Webguys_EasytemplateNewsletter_Block_Adminhtml_Newsletter_Template_Edit_Ta
             );
         }
 
-        $fieldset->addField('preview_type', 'hidden', array(
-            'name' => 'preview_type',
-            'value' => $model->isPlain() ? 1 : 2
-        ));
-
-        $fieldset->addField('preview_text', 'hidden', array(
-            'name' => 'preview_text',
-        ));
-
-        $fieldset->addField('preview_styles', 'hidden', array(
-            'name' => 'preview_styles',
-        ));
-
-        $fieldset->addField('preview_id', 'hidden', array(
-            'name' => 'preview_id',
-        ));
-
         $fieldset->addField(
             'code',
             'text',

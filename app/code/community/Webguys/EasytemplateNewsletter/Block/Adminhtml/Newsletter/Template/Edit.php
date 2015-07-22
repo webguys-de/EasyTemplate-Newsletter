@@ -50,17 +50,6 @@ class Webguys_EasytemplateNewsletter_Block_Adminhtml_Newsletter_Template_Edit
             )
         );
 
-        if ($this->_isAllowedAction('save')) {
-            $this->_updateButton('save', 'label', Mage::helper('newsletter')->__('Save Template'));
-            $this->_addButton('saveandcontinue', array(
-                'label'     => Mage::helper('adminhtml')->__('Save and Continue Edit'),
-                'onclick'   => 'saveAndContinueEdit(\''.$this->_getSaveAndContinueUrl().'\')',
-                'class'     => 'save',
-            ), -100);
-        } else {
-            $this->_removeButton('save');
-        }
-
         if ($this->_isAllowedAction('delete')) {
             $this->_updateButton('delete', 'label', Mage::helper('newsletter')->__('Delete Template'));
         } else {
@@ -224,8 +213,8 @@ class Webguys_EasytemplateNewsletter_Block_Adminhtml_Newsletter_Template_Edit
                     if ($('template_styles') != undefined) {
                         $('preview_styles').value = $('template_styles').value;
                     }
-                    if ($('id') != undefined) {
-                        $('preview_id').value = $('id').value;
+                    if ($('template_id') != undefined) {
+                        $('preview_id').value = $('template_id').value;
                     }
                     templatePreviewForm.submit();
                     return false;
