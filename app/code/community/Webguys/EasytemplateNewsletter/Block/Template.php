@@ -17,4 +17,14 @@ class Webguys_EasytemplateNewsletter_Block_Template extends Webguys_Easytemplate
         $template = $this->getNewsletterTemplate();
         return Mage::getUrl('newsletter/preview/show', array('id' => $template->getId(), 'access_token' => $template->getAccessToken()));
     }
+
+    public function getStoreName()
+    {
+        return Mage::getStoreConfig(Mage_Core_Model_Store::XML_PATH_STORE_STORE_NAME);
+    }
+
+    public function getContactAddress()
+    {
+        return join(', ', explode(PHP_EOL, Mage::getStoreConfig('general/store_information/address')));
+    }
 }

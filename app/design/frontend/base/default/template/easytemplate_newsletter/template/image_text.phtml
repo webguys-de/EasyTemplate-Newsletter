@@ -1,0 +1,85 @@
+<?php if ($this->getImageAlignment() == 'left') : ?>
+<!-- COMPACT ARTICLE SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0 15px 70px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="500" style="padding:0 0 20px 0;" class="responsive-table">
+                <tr>
+                    <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a href="<?php echo $this->getTargetLink() ?>" target="_blank"><img src="<?php echo $this->getSmallImage() ?>" alt="<?php echo $this->getHeading() ?>" width="150" height="150" border="0" style="display: block; font-family: Arial; color: #266e9c; font-size: 14px;"></a></td>
+                    <td style="padding: 40px 0 0 0;" class="no-padding">
+                        <!-- ARTICLE -->
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <td align="left" style="padding: 0 0 5px 25px; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding-copy"><?php echo $this->getHeading() ?></td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding: 10px 0 15px 25px; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy"><?php echo $this->getContent() ?></td>
+                            </tr>
+                            <?php if ($this->getButtonText()) : ?>
+                            <tr>
+                                <td align="center">
+                                    <!-- BULLETPROOF BUTTON -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                                        <tr>
+                                            <td align="center" style="padding: 0 0 0 0;" class="padding-copy">
+                                                <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
+                                                    <tr>
+                                                        <td align="center"><a href="<?php echo $this->getTargetLink() ?>" target="_blank" style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #256F9C; border-top: 15px solid #256F9C; border-bottom: 15px solid #256F9C; border-left: 25px solid #256F9C; border-right: 25px solid #256F9C; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;" class="mobile-button"><?php echo $this->getButtonText() ?></a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <?php endif; ?>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<?php else : ?>
+<!-- COMPACT ARTICLE SECTION -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 0 15px 70px 15px;" class="section-padding">
+            <table border="0" cellpadding="0" cellspacing="0" width="500" style="padding:0 0 20px 0;" class="responsive-table">
+                <tr>
+                    <td style="padding: 40px 0 0 0;" class="no-padding">
+                        <!-- ARTICLE -->
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <td align="left" style="padding: 0 25px 5px 0; font-size: 22px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #333333;" class="padding-copy"><?php echo $this->getHeading() ?></td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding: 10px 25px 15px 0; font-size: 16px; line-height: 24px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy"><?php echo $this->getContent() ?></td>
+                            </tr>
+                            <?php if ($this->getButtonText()) : ?>
+                            <tr>
+                                <td align="center">
+                                    <!-- BULLETPROOF BUTTON -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mobile-button-container">
+                                        <tr>
+                                            <td align="center" style="padding: 0 0 0 0;" class="padding-copy">
+                                                <table border="0" cellspacing="0" cellpadding="0" class="responsive-table">
+                                                    <tr>
+                                                        <td align="center"><a href="<?php echo $this->getTargetLink() ?>" target="_blank" style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; background-color: #256F9C; border-top: 15px solid #256F9C; border-bottom: 15px solid #256F9C; border-left: 25px solid #256F9C; border-right: 25px solid #256F9C; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; display: inline-block;" class="mobile-button"><?php echo $this->getButtonText() ?></a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <?php endif; ?>
+                        </table>
+                    </td>
+                    <td valign="top" style="padding: 40px 0 0 0;" class="mobile-hide"><a href="<?php echo $this->getTargetLink() ?>" target="_blank"><img src="<?php echo $this->getSmallImage() ?>" alt="<?php echo $this->getHeading() ?>" width="150" height="150" border="0" style="display: block; font-family: Arial; color: #666666; font-size: 14px;"></a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<?php endif; ?>

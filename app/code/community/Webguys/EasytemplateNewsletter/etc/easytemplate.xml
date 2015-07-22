@@ -116,6 +116,75 @@
                     </fields>
                 </top_banner>
 
+                <image_text template="easytemplate_newsletter/template/image_text.phtml" type="easytemplate_newsletter/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Image + Text</label>
+                    <image>images/easytemplate_newsletter/image_text.png</image>
+                    <comment>Big banner with image, text and button</comment>
+                    <sort_order>30</sort_order>
+                    <fields>
+                        <image_alignment translate="label,comment">
+                            <label>Image alignment</label>
+                            <comment>Style of the template</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_select</input_renderer>
+                            <input_renderer_source>easytemplate/input_renderer_source_values</input_renderer_source>
+                            <values>
+                                <left>Left</left>
+                                <right>Right</right>
+                            </values>
+                            <sort_order>10</sort_order>
+                            <default_value>left</default_value>
+                            <required>1</required>
+                        </image_alignment>
+                        <small_image translate="label,comment">
+                            <label>Image</label>
+                            <comment>Please provice image with dimensions 150x150 px</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_image</input_renderer>
+                            <sort_order>20</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </small_image>
+                        <heading translate="label,comment">
+                            <label>Heading</label>
+                            <comment>Title / Heading</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>30</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </heading>
+                        <content translate="label,comment">
+                            <label>Content</label>
+                            <comment>Text Content</comment>
+                            <backend_model>easytemplate/template_data_text</backend_model>
+                            <input_renderer>easytemplate/input_renderer_textarea</input_renderer>
+                            <sort_order>40</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </content>
+                        <button_text translate="label,comment">
+                            <label>Button Text</label>
+                            <comment>Text on the button</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>50</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </button_text>
+                        <target_link translate="label,comment">
+                            <label>Target Link</label>
+                            <comment>Target for image (same as button link)</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_link</input_renderer>
+                            <sort_order>60</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </target_link>
+                    </fields>
+                </image_text>
+
                 <footer template="easytemplate_newsletter/template/footer.phtml" type="easytemplate_newsletter/template" translate="label,comment">
                     <enabled>1</enabled>
                     <label>Footer</label>
