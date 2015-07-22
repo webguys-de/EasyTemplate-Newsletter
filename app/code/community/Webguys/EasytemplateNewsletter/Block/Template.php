@@ -14,6 +14,7 @@ class Webguys_EasytemplateNewsletter_Block_Template extends Webguys_Easytemplate
 
     public function getNewsletterFrontendUrl()
     {
-        return Mage::getUrl('newsletter/preview/show', array('id' => $this->getNewsletterTemplate()->getId()));
+        $template = $this->getNewsletterTemplate();
+        return Mage::getUrl('newsletter/preview/show', array('id' => $template->getId(), 'access_token' => $template->getAccessToken()));
     }
 }

@@ -40,4 +40,14 @@ class Webguys_EasytemplateNewsletter_Model_Newsletter_Template extends Mage_News
 
         return false;
     }
+
+    public function getAccessToken()
+    {
+        return sha1(join(PHP_EOL, $this->getData()));
+    }
+
+    public function validAccessToken($token)
+    {
+        return ($this->getAccessToken() === $token);
+    }
 }

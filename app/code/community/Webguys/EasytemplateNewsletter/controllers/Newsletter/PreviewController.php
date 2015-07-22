@@ -9,16 +9,16 @@ class Webguys_EasytemplateNewsletter_Newsletter_PreviewController extends Mage_C
 
     public function showAction()
     {
-        /** @var $template Mage_Newsletter_Model_Template */
+        /** @var $template Webguys_EasytemplateNewsletter_Model_Newsletter_Template */
         $template = Mage::getModel('newsletter/template');
 
         $id = $this->getRequest()->getParam('id', false);
-        if ($id) {
+        $accessToken = $this->getRequest()->getParam('access_token', false);
+        if ($id && $accessToken) {
             $template->load($id);
         }
 
-        if ($template->getId() && $template->isEasyTemplate()) {
-
+        if ($template->getId() && $template->isEasyTemplate() && $template->validAccessToken($accessToken)) {
             $this->loadLayout();
 
             /** @var $previewBlock Webguys_EasytemplateNewsletter_Block_Preview */
