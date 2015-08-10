@@ -233,7 +233,7 @@
 
                 <fullwith_image template="easytemplate_newsletter/template/fullwith_image.phtml" type="easytemplate_newsletter/template" translate="label,comment">
                     <enabled>1</enabled>
-                    <label>Full width Image</label>
+                    <label>Full Width Image</label>
                     <image>images/easytemplate_newsletter/fullwith_image.png</image>
                     <comment>Big image</comment>
                     <sort_order>50</sort_order>
@@ -267,6 +267,25 @@
                         </image_alt_text>
                     </fields>
                 </fullwith_image>
+
+                <just_text template="easytemplate_newsletter/template/just_text.phtml" type="easytemplate_newsletter/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Full Width Text</label>
+                    <image>images/easytemplate_newsletter/just_text.png</image>
+                    <comment>Big image</comment>
+                    <sort_order>60</sort_order>
+                    <fields>
+                        <text translate="label,comment">
+                            <label>Text</label>
+                            <comment>The text</comment>
+                            <backend_model>easytemplate/template_data_text</backend_model>
+                            <input_renderer>easytemplate/input_renderer_textarea</input_renderer>
+                            <sort_order>30</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </text>
+                    </fields>
+                </just_text>
 
                 <footer template="easytemplate_newsletter/template/footer.phtml" type="easytemplate_newsletter/template" translate="label,comment">
                     <enabled>1</enabled>
