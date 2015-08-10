@@ -70,7 +70,7 @@
                     <fields>
                         <banner_image translate="label,comment">
                             <label>Header image</label>
-                            <comment>Please provice image with dimensions 500x300 px</comment>
+                            <comment>Please provide image with dimensions 500x300 px</comment>
                             <backend_model>easytemplate/template_data_varchar</backend_model>
                             <input_renderer>easytemplate/input_renderer_image</input_renderer>
                             <sort_order>10</sort_order>
@@ -139,7 +139,7 @@
                         </image_alignment>
                         <small_image translate="label,comment">
                             <label>Image</label>
-                            <comment>Please provice image with dimensions 150x150 px</comment>
+                            <comment>Please provide image with dimensions 150x150 px</comment>
                             <backend_model>easytemplate/template_data_varchar</backend_model>
                             <input_renderer>easytemplate/input_renderer_image</input_renderer>
                             <sort_order>20</sort_order>
@@ -231,23 +231,49 @@
                     </fields>
                 </heading_text_button>
 
+                <fullwith_image template="easytemplate_newsletter/template/fullwith_image.phtml" type="easytemplate_newsletter/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Full width Image</label>
+                    <image>images/easytemplate_newsletter/fullwith_image.png</image>
+                    <comment>Big image</comment>
+                    <sort_order>50</sort_order>
+                    <fields>
+                        <image translate="label,comment">
+                            <label>Image</label>
+                            <comment>Please provide image with width of 500px</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_image</input_renderer>
+                            <sort_order>10</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </image>
+                        <image_height translate="label,comment">
+                            <label>Image height</label>
+                            <comment>Please provide image height in pixel</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>20</sort_order>
+                            <default_value/>
+                            <required>1</required>
+                        </image_height>
+                        <image_alt_text translate="label,comment">
+                            <label>Image alt text</label>
+                            <comment>Alternative text on image</comment>
+                            <backend_model>easytemplate/template_data_varchar</backend_model>
+                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
+                            <sort_order>30</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </image_alt_text>
+                    </fields>
+                </fullwith_image>
+
                 <footer template="easytemplate_newsletter/template/footer.phtml" type="easytemplate_newsletter/template" translate="label,comment">
                     <enabled>1</enabled>
                     <label>Footer</label>
                     <image>images/easytemplate_newsletter/footer.png</image>
                     <comment>Footer with unsubscribe link and imprint data</comment>
                     <sort_order>900</sort_order>
-                    <fields>
-                        <title translate="label,comment">
-                            <label>Title</label>
-                            <comment>Newsletter Title</comment>
-                            <backend_model>easytemplate/template_data_varchar</backend_model>
-                            <input_renderer>easytemplate/input_renderer_text</input_renderer>
-                            <sort_order>10</sort_order>
-                            <default_value>1</default_value>
-                            <required>1</required>
-                        </title>
-                    </fields>
                 </footer>
             </templates>
         </newsletter>

@@ -75,19 +75,32 @@ class Webguys_EasytemplateNewsletter_Model_Observer extends Mage_Core_Model_Abst
         /** @var $block Mage_Core_Block_Abstract */
         $block = $observer->getBlock();
 
-        if ($block instanceof Mage_Adminhtml_Block_Newsletter_Queue_Preview ||
-            $block instanceof Mage_Adminhtml_Block_Newsletter_Template_Preview) {
+        if ($block instanceof Mage_Adminhtml_Block_Newsletter_Queue_Preview) {
 
-            /* @var $template Mage_Newsletter_Model_Template */
-            $template = Mage::getModel('newsletter/template');
-
-            if($id = (int)Mage::app()->getRequest()->getParam('id')) {
+            if ($id = (int)Mage::app()->getRequest()->getParam('id')) {
+                /** @var $queue Webguys_EasytemplateNewsletter_Model_Newsletter_Queue */
                 $queue = Mage::getModel('newsletter/queue');
                 $queue->load($id);
 
                 $storeId = (int)Mage::app()->getRequest()->getParam('store_id', false);
 
                 if ($html = $queue->getTemplate()->renderTemplate($storeId)) {
+                    $transport = $observer->getTransport();
+                    $transport->setHtml($html);
+                }
+            }
+
+        }
+        elseif ($block instanceof Mage_Adminhtml_Block_Newsletter_Template_Preview) {
+
+            if ($id = (int)Mage::app()->getRequest()->getParam('id')) {
+                /* @var $template Mage_Newsletter_Model_Template */
+                $template = Mage::getModel('newsletter/template');
+                $template->load($id);
+
+                $storeId = (int)Mage::app()->getRequest()->getParam('store_id', false);
+
+                if ($html = $template->renderTemplate($storeId)) {
                     $transport = $observer->getTransport();
                     $transport->setHtml($html);
                 }
