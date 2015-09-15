@@ -280,12 +280,31 @@
                             <comment>The text</comment>
                             <backend_model>easytemplate/template_data_text</backend_model>
                             <input_renderer>easytemplate/input_renderer_textarea</input_renderer>
-                            <sort_order>30</sort_order>
+                            <sort_order>10</sort_order>
                             <default_value/>
                             <required>0</required>
                         </text>
                     </fields>
                 </just_text>
+
+                <table template="easytemplate_newsletter/template/table.phtml" type="easytemplate_newsletter/template" translate="label,comment">
+                    <enabled>1</enabled>
+                    <label>Table (CSV)</label>
+                    <image>images/easytemplate_newsletter/table.png</image>
+                    <comment>Comma seperated text to table</comment>
+                    <sort_order>70</sort_order>
+                    <fields>
+                        <table_information translate="label,comment">
+                            <label>Table information</label>
+                            <comment>Example: First Column;Second Column</comment>
+                            <backend_model>easytemplate/template_data_text</backend_model>
+                            <input_renderer>easytemplate/input_renderer_textarea</input_renderer>
+                            <sort_order>10</sort_order>
+                            <default_value/>
+                            <required>0</required>
+                        </table_information>
+                    </fields>
+                </table>
 
                 <footer template="easytemplate_newsletter/template/footer.phtml" type="easytemplate_newsletter/template" translate="label,comment">
                     <enabled>1</enabled>
